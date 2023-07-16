@@ -24,6 +24,11 @@ public class MainController {
         return "products";
     }
 
+    @RequestMapping(value = "add")
+    public String addProduct(Model model){
+        model.addAttribute("product", new Product());
+        return "addProduct";
+      
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(Product product){
         productRepository.save(product);
